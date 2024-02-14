@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>NexaLoak</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo" style="padding-top: 1.05em; padding-left: 0.75em; padding-right: 0.95em;">
+							<img src="images/chart-network.svg" alt="distributed-nodes">
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>NexaLoak</h1>
+								<p>A Virtual Private Network with <b>99.99%</b> uptime using the <a href="https://raft.github.io">Raft</a> consensus algorithm <br> to prevent node failures.<br></p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#architecture">Architecture</a></li>
+								<li><a href="#implementation">Implementation</a></li>
+								<li><a href="#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+							<article id="intro">
+								<h2 class="major">Intro</h2>
+								<span class="image main"><img src="images/pic01.png" alt="" /></span>
+								<p>A Virtual Private Network (VPN) boasts various properties, including secure data transmission and protection against tracking of location and identity, among others. Despite offering exciting features, there are some issues. For instance, VPNs may face crashes, be banned in certain countries, or experience high workloads, resulting in low speeds. NexaLoak addresses these problems by employing the Raft algorithm. Distributed nodes collaborate to provide a well-designed solution to these issues, and a leader is responsible for achieving consensus, maintaining system uptime, removing filtered or banned nodes, overseeing a bot, and providing metrics. </p>
+							</article>
+
+							<article id="architecture">
+								<h2 class="major">Architecture</h2>
+								<span class="image main"><img src="images/pic02.png" alt="" /></span>
+								<p>The architecture of the system comprises various components that demonstrate how they are interconnected. To provide more details, refer to the document below, which contains several chapters as illustrated.</p>
+								<ol>
+									<li>Definitions</li>
+									<li>Consensus</li>
+									<li>System Design</li>
+									<li>Technologies</li>
+									<li>Implementation</li>
+								</ol>
+								<p>Chapter 1 includes the terms used in this project. Typically, in distributed systems, terms are overloaded, and therefore, defining their actual meanings is necessary.</p>
+								<p>Chapter 2 illustrates how the system achieves agreement and validity despite asynchronous conditions. (Termination is no longer a requirement for consensus). Additionally, this section discusses which parts of the algorithm are precisely modified to achieve the system's objectives.</p>
+								<p>Chapter 3 discusses the relationships among various segments, including clients, distributed nodes, domain name services, providers, etc. The insight into how the system truly operates is demonstrated step by step in a flowchart.</p>
+								<p>Chapter 4 introduces the technologies utilized in implementing the project, including the programming language, a reliable in-memory database, remote procedure call protocol, top-level tunneling protocol, etc.</p>
+								<p>Finally, Chapter 5 highlights the crucial aspects of the implementation and briefly provides technical documentation for APIs and code spaces.</p>
+								<a class="button primary" href="https://nexaloak.github.io">Documentation</a>
+							</article>
+
+							<article id="implementation">
+								<h2 class="major">Implementation</h2>
+								<span class="image main"><img src="images/pic03.png" alt="" /></span>
+								<p>NexaLoak divides the implementation into three modules. The first module, called <a href="https://github.com/nexaloak/logman">logman</a>, is responsible for implementing log management for the Raft algorithm. Its duties include providing a persistent log manager for each node, transmitting committed logs to the hard disks to prevent potential issues, and integrating with the Redis database. The second and third modules, which have not been implemented yet, will be responsible for the RPC protocol and the Raft algorithm, respectively. For more details, click on each part linked with GitHub pages and explore further. </p>
+							</article>
+
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; 2023 NexaLoak | All rights reserved.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
